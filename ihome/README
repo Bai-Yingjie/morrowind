@@ -1,0 +1,45 @@
+#
+# (C) Copyright 2014 - 2015
+#
+#  Pan Guolin guolinp@gmail.com
+#
+
+Summary:
+========
+
+These files can be used by some applications which need command line to 
+exchange the info between machine and man.
+
+How to make?
+============
+gcc *.c -o cli
+
+
+How to use?
+===========
+See the ihome_shell_test.c
+
+
+How to add new commands?
+========================
+0. all commands are defined in ihome_command.c default
+   you also can add new files to keep your commands
+
+1. define new function
+   static void your_cmd_fun(int argc, char *argv[])
+
+2. add this fucntion to commands list by macro "ihome_command_item"
+   ihome_command_item(your_cmd_name, your_cmd_fun)
+
+more: see ihome_command.c line9~line24
+
+Notes:
+======
+My running setup as below
+
+linux version:
+Linux panguolin-vpc 3.13.0-34-generic #60-Ubuntu SMP Wed Aug 13 15:49:09 UTC 2014 i686 i686 i686 GNU/Linux
+
+gcc version:
+gcc (Ubuntu 4.8.2-19ubuntu1) 4.8.2
+
